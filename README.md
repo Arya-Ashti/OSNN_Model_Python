@@ -19,10 +19,16 @@ The datasets that will be used are extracted from a public, opensource GitHub re
 - \# developers involved
 - Average time interval between crrent and last change
 - \# unique changes made
-- dev experience
-- recent dev experience
-- dev experience on a subsystem
+- Dev experience
+- Recent dev experience
+- Dev experience on a subsystem
 
 ## Methods
+
+### Supervised Learning
+A Radial Basis Function Network (RBFN) was trained using fully labeled commit data. The RBFN was optimized using methods such as gradient descent and k-means clustering to determine the optimal parameters.
+
+### Semi-supervised Learning
+The semi-supervised approach utilized a small subset of labeled data along with a large pool of unlabeled data. The RBFN was extended to incorporate techniques like pseudo-labeling and graph-based methods to exploit the underlying structure of the unlabeled data.
 ## Installation
 
