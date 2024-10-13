@@ -1,11 +1,6 @@
 # OSNN_Model_Python
 This repository contains a python implemetation of the OSNN Algorithm proposed by Soares et al. in their paper "OSNN: An online semisupervised neural network for nonstationary data streams". The objective of this project was to perform an analysis of supervised learning and semi-supervised learning for dealing with verification latency in the context of Just-in-Time Software Defect Prediction using the OSNN model.
 
-## Introduction
-OSNN is an online semisupervised neural network designed for data streams as the network trains on every incoming instance. It is a Radial Basis Function Neural Network, utilising centers to learn patterns and regions from incoming unlabelled instances.
-
-This project allows for semi-supervised learning by allowing unlabelled instances to appear in the dataset, and supervised learning by filtering out unlabelled instances before performing an update.
-
 ## Datasets
 The datasets that will be used are extracted from a public, opensource GitHub repository made available at https://zenodo.org/record/2594681. The datasets come from opensource projects and contain information regarding a number of different metrics of each change that is committed. These metrics include
 - If the change was a fix
@@ -24,11 +19,11 @@ The datasets that will be used are extracted from a public, opensource GitHub re
 - Dev experience on a subsystem
 
 ## Methods
+The same algorithm is used for both, the supervised and semi-supervised learning models.
 
-### Supervised Learning
-A Radial Basis Function Network (RBFN) was trained using fully labeled commit data. The RBFN was optimized using methods such as gradient descent and k-means clustering to determine the optimal parameters.
+A Radial Basis Function Network (RBFN) was trained using only labelled incoming instances by filtering out any unlaballed data. The model is optimised using the Newton Rhapson update method and a self-learning learning rate.
 
-### Semi-supervised Learning
-The semi-supervised approach utilized a small subset of labeled data along with a large pool of unlabeled data. The RBFN was extended to incorporate techniques like pseudo-labeling and graph-based methods to exploit the underlying structure of the unlabeled data.
+The semi-supervised approach allows unlabelled instances to remain in the set. The model utilises these instances using pseudo-labeling to exploit the underlying structure of the unlabeled data for better predicative performance.
+
 ## Installation
 
