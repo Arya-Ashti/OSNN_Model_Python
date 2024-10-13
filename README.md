@@ -6,8 +6,23 @@ OSNN is an online semisupervised neural network designed for data streams as the
 
 This project allows for semi-supervised learning by allowing unlabelled instances to appear in the dataset, and supervised learning by filtering out unlabelled instances before performing an update.
 
-
 ## Datasets
+The datasets that will be used are extracted from a public, opensource GitHub repository made available at https://zenodo.org/record/2594681. The datasets come from opensource projects and contain information regarding a number of different metrics of each change that is committed. These metrics include
+- If the change was a fix
+- \# modified subsystems
+- \# modified directories
+- \# modified files
+- Distribution of modified code
+- \# lines of code added
+- \# lines of code removed
+- \# lines before the change
+- \# developers involved
+- Average time interval between crrent and last change
+- \# unique changes made
+- dev experience
+- recent dev experience
+- dev experience on a subsystem
+
 ## Methods
 ## Installation
 
