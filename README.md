@@ -31,6 +31,13 @@ Key places to modify:
 - import_and_save.py, changes made to this file are dependant on the structure of your dataset.
 - evaluation_functions.py, this will only require changes if you change the structure of the default output matrix.
 
+### Format
+In general, the code assumes that the data takes the following format
+- First column should contain timestamps of when the instance arrives. This will be removed when importing the code using the 'import_data' function
+- The next columns should contain the input features/attributes
+- The second to last column is the label column. This should contain -1 if it's an unlabelled instance, 0 if it's a labelled instance of class 0, and 1 if it's a labelled instance of class 1.
+- The last column should always contain the true label of the instance, which may or may not be the same as the label in the previous column
+- Default delimiter is ';'
 
 
 ## Methods
